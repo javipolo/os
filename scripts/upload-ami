@@ -18,6 +18,8 @@ import sys
 OPENSHIFT_CI_ACCOUNT = "460538899914"
 OPENSHIFT_DEV_ACCOUNT = "269733383066"
 OPENSHIFT_MARKETPLACE_TEST_ACCOUNT = "125666959065"
+OPENSHIFT_QE_ACCOUNT = "301721915996"
+OPENSHIFT_OCS_QE_ACCOUNT = "861790564636"
 
 # Since we run all tests on QEMU, and as of today don't have really
 # any tests that are specific to a cloud provider, we just run
@@ -58,7 +60,7 @@ def upload_to_cloud(buildid, region, bucket, suffix=None, public=False):
 
     # If the AMI isn't public, then just grant access to the dev and CI accounts.
     if not public and cloud == AWS:
-        ca_args.extend(["--grant-user", OPENSHIFT_CI_ACCOUNT, OPENSHIFT_DEV_ACCOUNT])
+        ca_args.extend(["--grant-user", OPENSHIFT_CI_ACCOUNT, OPENSHIFT_DEV_ACCOUNT, OPENSHIFT_QE_ACCOUNT, OPENSHIFT_OCS_QE_ACCOUNT])
     try:
         print(ca_args)
         subprocess.check_call(ca_args)
