@@ -38,6 +38,7 @@ arch-include:
 # and https://github.com/openshift/release/blob/master/core-services/release-controller/README.md#rpm-mirrors
 repos:
   - rhel-8-baseos
+  - rhel-84-baseos
   - rhel-85-baseos
   - rhel-8-appstream
   - rhel-8-fast-datapath
@@ -344,7 +345,7 @@ packages:
 
 repo-packages:
   # Keep rhel8.5 systemd version
-  - repo: rhel-85-baseos
+  - repo: rhel-84-baseos
     packages:
       - systemd
   # we always want the kernel from BaseOS
