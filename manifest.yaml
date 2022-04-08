@@ -344,10 +344,6 @@ packages:
  - conntrack-tools
 
 repo-packages:
-  # Keep rhel8.5 systemd version
-  - repo: rhel-84-baseos
-    packages:
-      - systemd
   # we always want the kernel from BaseOS
   - repo: rhel-8-baseos
     packages:
@@ -383,7 +379,7 @@ repo-packages:
 modules:
   enable:
     # podman stack; see https://github.com/openshift/os/pull/681#issuecomment-1022443830
-    - container-tools:rhel8
+    - container-tools:3.0
     # qemu-guest-agent
     - virt:rhel
 
