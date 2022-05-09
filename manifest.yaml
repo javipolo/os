@@ -272,7 +272,8 @@ packages:
 
 repo-packages:
   # we always want the kernel from BaseOS
-  - repo: rhel-8-baseos
+  # Force RHEL9 kernel
+  - repo: rhel-9-baseos
     packages:
       - kernel
   # we want the one shipping in RHEL, not the equivalently versioned one in RHAOS
