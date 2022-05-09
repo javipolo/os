@@ -37,6 +37,7 @@ arch-include:
 # See README.md
 # and https://github.com/openshift/release/blob/master/core-services/release-controller/README.md#rpm-mirrors
 repos:
+  - rhel-9-baseos
   - rhel-8-baseos
   - rhel-8-appstream
   - rhel-8-fast-datapath
